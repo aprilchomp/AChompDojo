@@ -1,0 +1,118 @@
+#wrapper {
+    background-color: #2f5073;
+    margin: 0px auto;
+    width: 960px;
+}
+#wrapper img {
+    width: 300px;
+    margin-left: 15px;
+    margin-top: 10px;
+    display: inline-block;
+}
+.header_right {
+    color: white;
+    font-size: 13px;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 10px;
+    margin-left: 430px;
+    text-align: right;
+}
+.header_right a {
+    color: #ffd642;
+}
+.input {
+    background-color: grey;
+    padding: 5px;
+}
+#navigation {
+    background-color: #537ea9;
+    width: 700px;
+    height: 30px;
+    display: inline-block;
+    text-align: center;
+    margin-left: 150px;
+    padding-top: 15px;
+
+}
+#navigation a {
+    color: white;
+    text-decoration: none;
+    margin: 20px;
+}
+#main_content ul {
+    display: inline-block;
+    text-align: center;
+    margin-left: 50px;
+    line-height: 25px;
+}
+#main_content a {
+}
+.content_right {
+    color: white;
+    display: inline-block;
+    width: 600px;
+    text-align: center;
+    margin-left: 50px;
+    vertical-align: top;
+    display: inline-block;
+}
+.list {
+    color: #ffd642;
+    margin-right: 100px;
+    margin-top: 0px;
+    font-style: italic;
+    list-style-type: none;
+}
+.zen {
+    color: white;
+    font-style: normal;
+}
+#lower_content {
+    background-color: white;
+}
+.box1 {
+    width: 370px;
+    color: black;
+    text-align: center;
+    display: inline-block;
+    border-top: 4px solid #2f5073;
+    margin-left: 100px;
+    margin-top: 7px;
+    margin-right: 50px;
+}
+.box1 li {
+    color: black;
+    text-align: left;
+}
+.box1 a {
+    color: skyblue;
+}
+.box2 {
+    width: 370px;
+    color: black;
+    text-align: center;
+    display: inline-block;
+    border-top: 4px solid #2f5073;
+    margin-right: 20px;
+}
+.box2 li {
+    color: black;
+    text-align: left;
+}
+.box2 a {
+    color: skyblue;
+}
+#footer a {
+    color: skyblue;
+    text-decoration: none;
+    display: inline-block;
+    height: 30px;
+    margin-left: 100px;
+    padding: 25px;
+}
+#footer span {
+    color: skyblue;
+    margin-left: 420px;
+    font-size: 10px;
+}

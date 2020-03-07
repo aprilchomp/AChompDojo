@@ -1,0 +1,17 @@
+#wrapper {
+    margin: 0px auto;
+    width: 960px;
+    text-align: center;
+}
+.content h2 {
+    display: inline-block;
+    border: 3px solid black;
+    padding: 5px;
+}
+.content p {
+    display: inline-block;
+}
+.add {
+    background-color: green;
+    color: yellow;
+}

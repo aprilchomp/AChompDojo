@@ -1,0 +1,27 @@
+#wrapper {
+    margin: 0px auto;
+    width: 960px;
+    background-color: #d4d1b2;
+    padding: 15px;
+    text-align: center;
+}
+.header img {
+    width: 100px;
+    display: inline-block;
+}
+.header h1 {
+    display: inline-block;
+}
+.main img {
+    display: inline-block;
+    width: 140px;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 5px;
+}
+.blue {
+    background-color: cadetblue;
+}
+.red {
+    background-color: coral;
+}

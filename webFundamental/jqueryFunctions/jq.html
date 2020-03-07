@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="jqu.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+    <script>
+        $(document).ready(function (){
+            $( "#show-content-p" ).hide();
+            $( "#slide-down-content" ).slideUp();
+            $( "#fade-in-content" ).hide();
+            $( "#click-content" ).click(function() {
+                alert( "Button clicked" );
+            });
+            $( "#hide-content" ).click(function(){
+                $( "#hide-content" ).hide();
+            });
+            $( "#show-content" ).click(function(){
+                $( "#show-content-p" ).show();                
+            });
+            $( "#toggle-content" ).click(function(){
+                $("#toggle-p").toggle();
+            });
+            $( "#slide-down-button" ).click(function(){
+                $( "#slide-down-content" ).slideDown(function(){
+                });
+            });
+            $( "#slide-toggle-button" ).click(function() {
+                $( "#slide-toggle-content" ).slideToggle( "slow", function(){
+                });
+            });
+            $( "#fade-in-button" ).click(function(){
+                $( "#fade-in-content" ).fadeIn( "slow", function() {
+                });
+            });
+            $("#fade-out-button").click(function(){
+                $("#fade-out-content").fadeOut(function(){
+                });
+            });
+            $("#add-class-button").click(function(){
+                $("#add-class-content").addClass("add");
+            });
+            $("#before-button").click(function(){
+                $("#before-before").before("I go before!");
+            });
+            $("#after-button").click(function(){
+                $("#after-after").after("I go after!");
+            });
+            $("#append-button").click(function(){
+                $("ul").append("<li>append</li>");
+            });
+            $("#html-button").click(function(){
+                $("#hide-html").html("Hello");
+            });
+            $("#text-button").click(function(){
+                $("#text-paragraph").text("I changed the text!");
+            });
+
+        });
+    </script>
+    <title>jquery</title>
+</head>
+    <body>
+        <div id="wrapper">
+            <div class="content">
+                <h1>Click</h1>
+                <h2 id="click-content">Click</h2>
+                <p>Click the buttom for alert</p>
+            </div>
+            <hr>
+            <div class="content">
+                <h1>Hide</h1>
+                <h2>Hide</h2>
+                <p id="hide-content">Click the paragraph to hide</p>
+            </div>
+            <hr>
+            <div class="content">
+                <h1>Show</h1>
+                <h2 id="show-content">Click me to Show</h2>
+                <p id="show-content-p">I showed</p>
+            </div>
+            <hr>
+            <div class="content">
+                <h1>Toggle</h1>
+                <h2 id="toggle-content">Toggle</h2>
+                <p id="toggle-p">Click the button to toggle</p>
+            </div>
+            <hr>
+            <div class="content">
+                <h1 id="slide-down-content">Slide Down</h1>
+                <h2 id="slide-down-button">button</h2>
+                <p>Click button to slide down</p>
+            </div>
+            <hr>
+            <div class="content">
+                <h1 id="slide-toggle-content">Slide Toggle</h1>
+                <h2 id="slide-toggle-button">button</h2>
+                <p>Click button to slide toggle</p>
+            </div>
+            <hr>
+            <div class="content">
+                <h1 id="fade-in-content">Fade In</h1>
+                <h2 id="fade-in-button">button</h2>
+                <p>Click button to fade in</p>
+            </div>
+            <hr>
+            <div class="content">
+                <h1 id="fade-out-content">Fade Out</h1>
+                <h2 id="fade-out-button">button</h2>
+                <p>Click button to fade out</p>
+            </div>
+            <hr>
+            <div class="content">
+                <h1 id="add-class-content">Add Class</h1>
+                <h2 id="add-class-button">button</h2>
+                <p>Click button to add class</p>
+            </div>
+            <hr>
+            <div class="content">
+                <h1 id="before-before">Before</h1>
+                <h2 id="before-button">button</h2>
+                <p>Click button to put before</p>
+            </div>
+            <hr>
+            <div class="content">
+                <h1 id="after-after">After</h1>
+                <h2 id="after-button">button</h2>
+                <p>Click button to put after</p>
+            </div>
+            <hr>
+            <div class="content">
+                <h1>Append</h1>
+                <ul>
+                    <li>append</li>
+                    <li>append</li>
+                </ul>
+                <h2 id="append-button">button</h2>
+                <p>Click button to append</p>
+            </div>
+            <hr>
+            <div class="content">
+                <h1>html</h1>
+                <h2 id="html-button">click to add html</h2>
+                <p id="hide-html"></p>
+            </div>
+            <hr>
+            <div class="content">
+                <h1>Text</h1>
+                <h2 id="text-button">button</h2>
+                <p id="text-paragraph">Click button for text</p>
+            </div>
+        </div>
+    </body>
+</html>
