@@ -24,11 +24,13 @@ def add_course(request):
 def remove(request, id):
     remove_course = Course.objects.get(id=id)
     context = {
+        'id': remove_course.id,
         'name': remove_course.name,
         'description': remove_course.description,
     }
+    return render(request, 'remove.html', context)
 
 def confirm_remove(request, id):
-    #this needs fixing
+    remove_course = Course.objects.get(id=id)
     remove_course.delete()
-    return redirect(f'/remove/{remove_course.id}')
+    return redirect('/')
