@@ -29,5 +29,6 @@ def remove(request, id):
     }
 
 def confirm_remove(request, id):
+    #this needs fixing
     remove_course.delete()
     return redirect(f'/remove/{remove_course.id}')
