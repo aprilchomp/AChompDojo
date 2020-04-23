@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    Title: {{title}} <br>
+    Network: {{network}} <br>
+    Release Date: {{release_date}} <br>
+    Description: {{description}} <br>
+
+    <a href= "{% url 'edit_show' id=id %}" >Edit</a>
+    <a href= "{% url 'delete_show' id=id %}" >Delete</a>
+</body>
+</html>

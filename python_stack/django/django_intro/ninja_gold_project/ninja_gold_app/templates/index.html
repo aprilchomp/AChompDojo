@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninja Gold</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div id="wrapper">
+        <h1>Ninja Gold</h1>
+        <!-- <a href="Farm">Farm: <br> (10-20 golds)</a>
+        <a href="Cave">Cave: <br> (5-10 golds)</a>
+        <a href="House">House: <br> (2-5 golds)</a>
+        <a href="Casino">Casino: <br> (0-50 golds)</a> -->
+        <div id="form">
+            <form action="/process_money" method="POST">
+                {% csrf_token %}
+                <p>Farm</p>
+                <input type="submit" value="Submit">
+                <input type="hidden" name="location" value="farm"> 
+            </form>
+
+            <form action="/process_money" method="POST">
+                {% csrf_token %}
+                <p>Cave</p>
+                <input type="submit" value="Submit">
+                <input type="hidden" name="location" value="cave"> 
+            </form>
+
+            <form action="/process_money" method="POST">
+                {% csrf_token %}
+                <p>House</p>
+                <input type="submit" value="Submit">
+                <input type="hidden" name="location" value="house"> 
+            </form>
+
+            <form action="/process_money" method="POST">
+                {% csrf_token %}
+                <p>Casino</p>
+                <input type="submit" value="Submit">
+                <input type="hidden" name="location" value="casino"> 
+            </form>
+
+        </div>
+        <p>{{ request.session.total }}</p>
+        <!-- <p>{{ request.session.location }}</p> -->
+        {% for item in request.session.activities %}
+            <p>{{ item }}</p>
+        {% endfor %}
+</body>
+</html>

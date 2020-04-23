@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Word</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div id="wrapper">
+        <h1>Generate Random:</h1>
+        <a href="/results">Click to Generate</a>
+        {% if 'generated_num' in request.session %}
+        <p>Your Random Number is: {{request.session.generated_num}}</p>
+        {% endif %}
+        <p>Attempt # {{request.session.counter}}</p>
+        <a href="/clear_session">Click to End Session</a>
+    </div>
+</body>
+</html>

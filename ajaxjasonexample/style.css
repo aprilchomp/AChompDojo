@@ -1,0 +1,16 @@
+header {
+    display: inline-block;
+}
+h1 {
+    display: inline-block;
+}
+button {
+    background-color: teal;
+    color: cornsilk;
+    padding: 10px;
+    vertical-align: super;
+    margin-left: 10px;
+}
+.hide-me {
+    display: none;
+}

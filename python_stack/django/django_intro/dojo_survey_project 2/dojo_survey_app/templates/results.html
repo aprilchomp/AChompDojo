@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/results_style.css' %}">
+</head>
+<body>
+    <div id="wrapper">
+        <h1>Results:</h1>
+        <p>Username: {{username}}</p>
+        <p>Email: {{email}}</p>
+        <p>Location: {{location}}</p>
+        <p>Comments: {{comments}}</p>
+        <a href="/clear_session">Click to End Session</a>
+    </div>
+</body>
+</html>

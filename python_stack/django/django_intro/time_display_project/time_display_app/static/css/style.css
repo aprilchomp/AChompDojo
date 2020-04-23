@@ -1,0 +1,14 @@
+#wrapper {
+    margin: 0px auto;
+    width: 800px;
+    height: auto;
+    text-align: center;
+}
+h1 {
+    border-style: solid;
+    padding: 10px;
+}
+h2 {
+    border-style: dashed;
+    padding: 10px;
+}
