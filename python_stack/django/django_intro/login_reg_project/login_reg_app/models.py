@@ -29,6 +29,8 @@ class User(models.Model):
 class Wall_Message(models.Model):
     message = models.CharField(max_length=255)
     poster = models.ForeignKey(User, related_name='user_messages', on_delete=models.CASCADE)
+    # ADDING IN OUR LIKES
+    user_likes = models.ManyToManyField(User, related_name='liked_posts')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -38,4 +40,3 @@ class Comment(models.Model):
     wall_message = models.ForeignKey(Wall_Message, related_name="post_comments", on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-

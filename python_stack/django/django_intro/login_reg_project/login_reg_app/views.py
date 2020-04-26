@@ -53,3 +53,15 @@ def post_comment(request, id):
     message = Wall_Message.objects.get(id=id)  ##what message the poster will comment on
     Comment.objects.create(comment=request.POST['comment'], poster=poster, wall_message=message) ##qury creates comment by a poster on a message
     return redirect('/success')
+
+def profile(request, id):
+    context = {
+        'user': User.objects.get(id=id)
+    }
+    return render(request, 'profile.html', context)
+
+def add_like(request, id):
+    liked_message = Wall_Message.objects.get(id=id)
+    user_liking = User.objects.get(id=request.session['id'])
+    liked_message.user_likes.add(user_liking)
+    return redirect('/success')

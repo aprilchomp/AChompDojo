@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div id="wrapper">
+
+        <a href="/logout">Logout</a>
+        
+        <h1>{{user.first_name}}'s User Profile</h1>
+
+        {% for post in user.user_messages.all %}
+        <!-- user=from profile method in views, user_messages=from wall_message in models -- related_name -->
+            <p>Post: {{post.message}}</p>
+            <!-- post=variable set in for loop, message=from message in wall_message model -->
+        {% endfor %}
+
+        {% for comment in user.user_comments.all %}
+        <!-- user=from profile method in views, user_comments=from comment in models -- related_name -->
+            <p>Comment: {{comment.comment}}</p>
+            <!-- comment=variable in for loop, comment from comment in comment model -->
+        {% endfor %}
+    
+    </div>
+</body>
+</html>
