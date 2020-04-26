@@ -12,6 +12,8 @@ class UserManager(models.Manager):
             errors['fname'] = "First name must be at least 3 characters"
         if len(postData['pw']) < 5:
             errors['pw'] = "Password must be at least 5 characters" 
+        if postData['pw'] != postData['confirmpw']: ##checks if passwords entered are the same
+            errors['pw'] = 'Password and Confirm Password do not match'
         return errors
 
 class User(models.Model):
@@ -29,3 +31,11 @@ class Wall_Message(models.Model):
     poster = models.ForeignKey(User, related_name='user_messages', on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+class Comment(models.Model):
+    comment = models.CharField(max_length=255)
+    poster = models.ForeignKey(User, related_name='user_comments', on_delete=models.CASCADE)
+    wall_message = models.ForeignKey(Wall_Message, related_name="post_comments", on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+

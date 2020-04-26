@@ -17,9 +17,6 @@ def success(request):
 ## Loggin in and reg
 def register(request):
     #create a user object
-    if request.POST['pw'] != request.POST['confirmpw']: ##checks if passwords entered are the same
-        return redirect('/')
-    else:
         errors = User.objects.basic_validator(request.POST)
         print(errors)
         if len(errors) > 0:
@@ -49,4 +46,10 @@ def logout(request):
 
 def post_mess(request):
     Wall_Message.objects.create(message=request.POST['mess'], poster=User.objects.get(id=request.session['id'])) ##from success template input of make_post form
+    return redirect('/success')
+
+def post_comment(request, id):
+    poster = User.objects.get(id=request.session['id']) ##what user is in current session to make a comment on a post
+    message = Wall_Message.objects.get(id=id)  ##what message the poster will comment on
+    Comment.objects.create(comment=request.POST['comment'], poster=poster, wall_message=message) ##qury creates comment by a poster on a message
     return redirect('/success')

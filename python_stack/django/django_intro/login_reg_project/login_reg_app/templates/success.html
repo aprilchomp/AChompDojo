@@ -8,24 +8,41 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <h1>Welcome {{request.session.user}}, you have successfully logged in!</h1>
+    <div id="wrapper">
 
-    <h2>Write a Post:</h2>
-    <form action="/make_post" method="POST">
-        {% csrf_token %}
-        <input type="text" name="mess">
-        <input type="submit" value="Post">
-    </form>
+        <h1>Welcome {{request.session.user}}, you have successfully logged in!</h1>
 
-    <div id='posts'>
-        {% for post in wall_messages %}
-        <div class='one_post'>
-            <h4>Poster: {{post.poster.first_name}} {{post.poster.last_name}}</h4>
-            <p>{{post.message}}</p>
+        <h2>Write a Post:</h2>
+        <form action="/make_post" method="POST">
+            {% csrf_token %}
+            <input type="text" name="mess">
+            <input type="submit" value="Post">
+        </form>
+
+        <div id='posts'>
+            {% for post in wall_messages %}
+            <div class='one_post'>
+                <p>{{post.message}}</p>
+                <h4>Poster: {{post.poster.first_name}} {{post.poster.last_name}}</h4>
+
+                <form action="/add_comment/{{post.id}}" method=POST>
+                    {% csrf_token %}
+                    Comment: <input type="text" name="comment">
+                    <input type="hidden" value={{post.id}} name="message_posted">
+                    <input type="submit" value="Submit">
+                </form>
+                <div id="comment">
+                    {% for comment in post.post_comments.all %}
+                        <p>{{comment.comment}}</p>
+                        <h4>Posted By: {{comment.poster.first_name}} {{comment.poster.last_name}}</h4>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
         </div>
-        {% endfor %}
-    </div>
 
-    <a href="/logout">Logout</a>
+        <a href="/logout">Logout</a>
+        
+    </div>
 </body>
 </html>
