@@ -6,13 +6,13 @@ class UserManager(models.Manager):
     def basic_validator(self, postData):
         errors = {}
         EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
-        if not EMAIL_REGEX.match(postData['email']):    # test whether a field matches the pattern            
+        if not EMAIL_REGEX.match(postData['email']):    ## test whether a field matches the pattern            
             errors['email'] = "Invalid email address was entered"
         if len(postData['fname']) < 3:
             errors['fname'] = "First name must be at least 3 characters"
         if len(postData['pw']) < 5:
             errors['pw'] = "Password must be at least 5 characters" 
-        if postData['pw'] != postData['confirmpw']: ##checks if passwords entered are the same
+        if postData['pw'] != postData['confirmpw']:  ##checks if passwords entered are the same
             errors['pw'] = 'Password and Confirm Password do not match'
         return errors
 
