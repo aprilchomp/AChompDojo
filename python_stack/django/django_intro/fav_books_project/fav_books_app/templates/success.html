@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success!</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div id="wrapper">
+        <a href="/logout">Logout</a>
+
+        <h1>Welcome {{request.session.user}}, you have successfully logged in!</h1>
+
+        <h2>Add New Book:</h2>
+        <form action="/add_book" method="POST">
+            {% csrf_token %}
+            Title: <input type="text" name="title"><br>
+            Description: <input type="text" name="description">
+            <input type="submit" value="Post">
+        </form>
+
+        <h2>Favorite Books:</h2>
+        {% for book in books %}
+        <p>{{book.title}}</p>
+        <p>{{}}</p>
+        {% endfor %}
+    </div>
+</body>
+</html>
