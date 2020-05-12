@@ -1,0 +1,47 @@
+What is source code?
+sequences of instructions, written in programming languages
+
+What makes computers so “smart”, anyway?
+Software engineers, developers, programmers!
+
+What is the purpose of a programming language?
+To act as a “go-between” from human to computer 
+
+What are 3 examples of programming languages? Why are there so many of these?
+PHP, Python, Ruby, JavaScript - Each language has differing strengths and therefore is useful in different situations
+
+What is a variable? Why are variables useful?
+is a specific spot in memory - allows storage of data to be used later
+
+What is the difference between a single-equals (=) and a double-equals (==)?
+= sets a value , == evaluates two values 
+
+What is the difference between a double-equals (==) and a triple-equals (===)?
+=== is strict comparison without converting data types, == evaluates two values
+
+Why does the developer console exist?
+Testing code!
+
+When we talk about “conditional” statements, what does that mean? What is an example?
+Conditionals are used to perform different actions based on different conditions, exp IF and ELSE
+
+Why would we want FOR or WHILE loops in our source code?
+FOR when you know exactly how long a loop should run
+
+When would you use a WHILE loop, instead of a FOR loop?
+when you have a condition that keeps the loop running (or that will cause the loop to stop), but you aren’t sure exactly how many iterations that will require.
+
+What is a function? Why would we use functions?
+Allows code to be reused without rewriting it
+
+How many values can you receive back from a function? How many values can you send in?
+Unlimited?
+
+What is an array? How many values does it hold?
+Its like a filing cabinet that can hold any amount of values 
+
+What is a T-diagram and why should I know how to use one?
+T-diagram helps you keep track of your variable values 
+
+What are the two ways to comment JS code? When would you use one versus the other?
+//     /* and */
